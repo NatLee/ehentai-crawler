@@ -1,15 +1,25 @@
-__pycache__
-
-.vscode
-
-desktop.ini
-
-.DS_Store
-
-debug.log
-
+# Your settings and the crawler's output. setting.ini may hold your ExHentai cookies.
+setting.ini
 list.db
+img/
+*.part
 
-img
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
 
+# Editors and OS
+.vscode/
+desktop.ini
+.DS_Store
+debug.log
 page_crawl_test.py
