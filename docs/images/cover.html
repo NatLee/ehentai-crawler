@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+  Source of docs/images/cover.png (1280x640, GitHub social preview size).
+  Re-render with headless Edge or Chrome:
+    msedge --headless=new --disable-gpu --hide-scrollbars --window-size=1280,640 \
+           --screenshot=docs/images/cover.png file:///<path>/docs/images/cover.html
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ehentai-crawler cover</title>
+<style>
+  :root {
+    --paper: #f5f1ea;
+    --ink: #1c1c1e;
+    --muted: #6b6760;
+    --bamboo: #2f8f5b;
+    --bamboo-soft: #dcebdf;
+  }
+  html, body { margin: 0; width: 1280px; height: 640px; overflow: hidden; background: var(--paper); }
+  body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); }
+  svg { display: block; }
+  .title { font: 700 76px "Segoe UI", "Helvetica Neue", Arial, sans-serif; letter-spacing: -1.5px; }
+  .tagline { font: 500 34px "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: var(--muted); }
+  .node { font: 600 24px "Cascadia Mono", Consolas, "SFMono-Regular", monospace; }
+  .small { font: 500 22px "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: var(--muted); }
+</style>
+</head>
+<body>
+<svg width="1280" height="640" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="panda">
+      <circle cx="-108" cy="-112" r="58" fill="#1c1c1e"/>
+      <circle cx="108" cy="-112" r="58" fill="#1c1c1e"/>
+      <circle cx="0" cy="0" r="160" fill="#ffffff" stroke="#1c1c1e" stroke-width="10"/>
+      <ellipse cx="-58" cy="-12" rx="40" ry="54" transform="rotate(28 -58 -12)" fill="#1c1c1e"/>
+      <ellipse cx="58" cy="-12" rx="40" ry="54" transform="rotate(-28 58 -12)" fill="#1c1c1e"/>
+      <circle cx="-52" cy="-18" r="13" fill="#ffffff"/>
+      <circle cx="52" cy="-18" r="13" fill="#ffffff"/>
+      <ellipse cx="0" cy="44" rx="24" ry="16" fill="#1c1c1e"/>
+      <path d="M -26 78 Q -13 94 0 80 Q 13 94 26 78" fill="none" stroke="#1c1c1e" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f8f5b"/>
+    </marker>
+  </defs>
+
+  <!-- the clones: two dashed outlines behind the panda -->
+  <g fill="none" stroke="#1c1c1e" stroke-width="5" stroke-dasharray="14 12" opacity="0.18">
+    <circle cx="398" cy="352" r="160"/>
+    <circle cx="290" cy="244" r="58"/><circle cx="506" cy="244" r="58"/>
+  </g>
+  <g fill="none" stroke="#1c1c1e" stroke-width="5" stroke-dasharray="14 12" opacity="0.35">
+    <circle cx="354" cy="340" r="160"/>
+    <circle cx="246" cy="232" r="58"/><circle cx="462" cy="232" r="58"/>
+  </g>
+  <use href="#panda" x="310" y="328"/>
+
+  <!-- a stalk of bamboo -->
+  <g stroke="#2f8f5b" stroke-width="14" stroke-linecap="round">
+    <line x1="120" y1="600" x2="120" y2="470"/>
+    <line x1="120" y1="455" x2="120" y2="330"/>
+  </g>
+  <path d="M 118 400 q -40 -30 -78 -18 q 38 22 78 18 z" fill="#2f8f5b"/>
+  <path d="M 122 540 q 40 -24 70 -8 q -34 20 -70 8 z" fill="#2f8f5b"/>
+
+  <text x="640" y="200" class="title">ehentai-crawler</text>
+  <text x="644" y="256" class="tagline">Clone a panda yourself.</text>
+
+  <!-- the pipeline -->
+  <g transform="translate(640 330)">
+    <g transform="translate(0 0)">
+      <rect x="0" y="0" width="112" height="64" rx="14" fill="#dcebdf" stroke="#2f8f5b" stroke-width="3"/>
+      <text x="56" y="41" text-anchor="middle" class="node">crawl</text>
+    </g>
+    <line x1="118" y1="32" x2="146" y2="32" stroke="#2f8f5b" stroke-width="4" marker-end="url(#arrow)"/>
+    <g transform="translate(152 0)">
+      <rect x="0" y="0" width="112" height="64" rx="14" fill="#dcebdf" stroke="#2f8f5b" stroke-width="3"/>
+      <text x="56" y="41" text-anchor="middle" class="node">parse</text>
+    </g>
+    <line x1="270" y1="32" x2="298" y2="32" stroke="#2f8f5b" stroke-width="4" marker-end="url(#arrow)"/>
+    <g transform="translate(304 0)">
+      <rect x="0" y="0" width="150" height="64" rx="14" fill="#dcebdf" stroke="#2f8f5b" stroke-width="3"/>
+      <text x="75" y="41" text-anchor="middle" class="node">download</text>
+    </g>
+    <line x1="460" y1="32" x2="488" y2="32" stroke="#2f8f5b" stroke-width="4" marker-end="url(#arrow)"/>
+    <g transform="translate(494 0)">
+      <rect x="0" y="0" width="96" height="64" rx="14" fill="#1c1c1e"/>
+      <text x="48" y="41" text-anchor="middle" class="node" fill="#f5f1ea">store</text>
+    </g>
+  </g>
+
+  <text x="644" y="460" class="small">list pages → gallery pages → image pages</text>
+  <text x="644" y="496" class="small">→ SQLite + img/&lt;gallery id&gt;/</text>
+  <text x="644" y="568" class="small">Python CLI · resumable · rate limited · retries with backoff</text>
+</svg>
+</body>
+</html>
